@@ -4,22 +4,20 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-6">
     <h3 class="text-center">Add a Burger</h3>
-    <form class="create-update-form" action="burgers/create" method="POST">
+    <form class="jumbotron" action="burgers/create" method="POST">
 
       <div class="form-group">
         <label for="ca">Burger Name:</label>
         <input type="text" id="burger" class="form-control" name="burger_name">
       </div>
 
-      <button class = "btn-primary" type="submit">Add Burger</button>
+      <button class = "addButton btn btn-primary" type="submit">Add Burger</button>
     </form>
   </div>
-  <div class="col-md-9">
-  </div>
-</div>
-<div class = "row">
+ 
+
   <div class="col-md-6">
      <h3>Here is our burger selection.</h3>
     <ul class="list-group">
@@ -29,13 +27,18 @@
               <span class="burgerName">{{this.burger_name}}</span>
               <form id="devourForm" action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="true">
-                <button class="btn-primary" type="submit">Devour Me!</button>
+                <button class="btn btn-primary" type="submit">Devour Me!</button>
               </form>
             </li>
           {{/unless}}
         {{/each}}
       </ul>
+
+      <hr>
     </div>
+
+
+
   <div class="col-md-6">
     <h3>These burgers are no longer on the menu.</h3>
     <ul class="list-group">
@@ -48,4 +51,5 @@
       {{/each}}
     </ul>
   </div>
+</div>
 </div>
